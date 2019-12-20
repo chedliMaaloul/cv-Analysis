@@ -1,0 +1,112 @@
+<html>
+<head>
+  <title>Curriculum Vitae</title>
+
+  <meta name="viewport" content="width=device-width"/>
+  <meta name="description" content=" Curriculum Vitae "/>
+  <meta charset="UTF-8">
+
+  <link type="text/css" rel="stylesheet" href="../../assets/css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+
+
+</head>
+<nav><app-navbar></app-navbar></nav>
+
+<body id="top" >
+<button (click)="downloadpdf()"> Download PDF</button>
+<div id="cv" class="instaFade">
+  <div class="mainDetails">
+    <div id="headshot" class="quickFade">
+      <img src={{cvdata.cv.img}}/>
+    </div>
+
+    <div id="name">
+      <h1 class="quickFade delayTwo">{{cvdata.cv.first_name}} {{cvdata.cv.last_name}}</h1>
+      <h2 class="quickFade delayThree">{{cvdata.cv.age}}</h2>
+      <h2 class="quickFade delayThree">{{cvdata.cv.pays}}</h2>
+    </div>
+
+    <!--<div id="contactDetails" class="quickFade delayFour">
+      <ul>
+        <li>e: <a href="mailto:joe@bloggs.com" target="_blank">joe@bloggs.com</a></li>
+        <li>w: <a href="http://www.bloggs.com">www.bloggs.com</a></li>
+        <li>m: 01234567890</li>
+      </ul>
+    </div>-->
+    <div class="clear"></div>
+  </div>
+
+  <div id="mainArea" class="quickFade delayFive">
+    <section>
+      <article>
+        <div class="sectionTitle">
+          <h1>Présentation</h1>
+        </div>
+
+        <div class="sectionContent">
+          <p> {{cvdata.cv.presentation}}</p>
+        </div>
+      </article>
+      <div class="clear"></div>
+    </section>
+
+
+    <section>
+      <div class="sectionTitle">
+        <h1>Expérience</h1>
+      </div>
+
+      <div class="sectionContent">
+        <article *ngFor="let exp of this.cvdata.cv.experiences">
+          <h2>{{exp}}</h2>
+        </article>
+
+
+      </div>
+      <div class="clear"></div>
+    </section>
+
+
+    <section>
+      <div class="sectionTitle">
+        <h1>Compétences </h1>
+      </div>
+
+      <div class="sectionContent">
+        <ul class="keySkills">
+          <li *ngFor="let comp of this.cvdata.cv.competences">{{comp}}</li>
+
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </section>
+
+
+    <section>
+      <div class="sectionTitle">
+        <h1>Formations</h1>
+      </div>
+
+      <div class="sectionContent">
+        <article *ngFor="let formation of this.cvdata.cv.formations">
+          <h2>{{formation}}</h2>
+        </article>
+
+      </div>
+      <div class="clear"></div>
+    </section>
+
+  </div>
+</div>
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3753241-1");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<nav><app-navbar></app-navbar></nav>
+<body>
+<br><br>
+<div id="abs2" >
+<!--<div class="col-sm-3">
+  <button mat-raised-button class="btn" >
+
+
+
+  <ng-multiselect-dropdown
+    [placeholder]="'Compétences'"
+    [data]="criteresList"
+    [(ngModel)]="selectedcriters"
+    [settings]="dropdownSettings"
+    (onSelect)="onItemSelect($event)"
+    (onDeSelect)="OnItemDeSelect($event)"
+    (onSelectAll)="onSelectAll($event)"
+    (onDeSelectAll)="onDeSelectAll($event)">
+    >
+  </ng-multiselect-dropdown>
+  </button>
+
+</div>-->
+  <div class="col-sm-3">
+  <button mat-raised-button class="btn" >
+
+
+
+    <angular2-multiselect [data]="itemList"
+                          [(ngModel)]="selectedItems"
+                          [settings]="settings"
+                          (onSelect)="onItemSelect2($event)"
+                          (onDeSelect)="OnItemDeSelect2($event)"
+                          (onSelectAll)="onSelectAll2($event)"
+                          (onDeSelectAll)="onDeSelectAll2($event)">
+    </angular2-multiselect>
+  </button>
+
+</div>
+  <div class="col-sm-3">
+  <button mat-raised-button class="btn" >
+
+
+
+    <angular2-multiselect [data]="ageList"
+                          [(ngModel)]="selectedAge"
+                          [settings]="settingsAge"
+                          (onSelect)="onItemSelectAge($event)"
+                          (onDeSelect)="OnItemDeSelectAge($event)"
+                          (onSelectAll)="onSelectAllAge($event)"
+                          (onDeSelectAll)="onDeSelectAllAge($event)">
+    </angular2-multiselect>
+  </button>
+
+</div>
+  <div class="col-sm-3">
+  <button mat-raised-button class="btn" >
+
+
+
+    <angular2-multiselect [data]="payseList"
+                          [(ngModel)]="selectedPays"
+                          [settings]="settingsPays"
+                          (onSelect)="onItemSelectPays($event)"
+                          (onDeSelect)="OnItemDeSelectPays($event)"
+                          (onSelectAll)="onSelectAllPays($event)"
+                          (onDeSelectAll)="onDeSelectAllPays($event)">
+      <c-badge>
+        <ng-template let-item="item">
+          <label style="margin: 0px;">{{item.itemName}}</label>
+          <img [src]="item.image" style="width: 16px; margin-right: 5px;" />
+        </ng-template>
+      </c-badge>
+      <c-item>
+        <ng-template let-item="item">
+          <label style="color: #333;min-width: 150px;">{{item.itemName}}</label>
+          <img [src]="item.image" style="width: 20%; border: 1px solid #efefef;" />
+        </ng-template>
+      </c-item>
+    </angular2-multiselect>
+  </button>
+
+</div>
+
+<div class="col-sm-3">
+
+
+  <button mat-raised-button color="primary" (click)="search()">
+    <mat-icon >search</mat-icon>
+
+  </button>
+
+</div>
+</div>
+
+<br><br>
+<div id="abs3" >
+
+<mat-card class="example-card" *ngFor="let x of this.result" (click)="cvpage(x)">
+  <mat-card-header>
+
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="content">
+      <img  src={{x.cv.img}}>
+    </div>
+    <div class="content">
+
+      <p style="font-size: 1.5em; /*color:#00BFFF;*/ color:black; ">
+        &nbsp;&nbsp;
+        <b>{{x.cv.first_name}}</b> &nbsp;&nbsp;
+        <b>{{x.cv.last_name}}</b>
+
+      </p>
+      <p style="font-size: 1.5em;/*color: gray;*/color:black;">
+        &nbsp;&nbsp;
+        <b>{{x.cv.pays}}</b>
+      </p>
+      <p style="font-size: 1.5em;/*color: gray;*/color:black;">
+        &nbsp;&nbsp;
+        <b>{{x.cv.age}}</b>
+      </p>
+
+    </div>
+
+  </mat-card-content>
+
+</mat-card>
+</div>
+</body>

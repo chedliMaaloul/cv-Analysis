@@ -1,0 +1,32 @@
+<body>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+<mat-card class="box">
+  <mat-card-header>
+    <mat-card-title>Log in</mat-card-title>
+  </mat-card-header>
+
+  <form class="example-form" [formGroup]="loginform">
+    <mat-card-content>
+
+      <mat-form-field class="example-full-width" >
+
+        <input matInput placeholder="Username" required formControlName="username">
+        <div *ngIf="f.username.touched && f.username.invalid" class="invalid-feedback d-block">username invalid</div>
+
+
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" required formControlName="password">
+        <div *ngIf="f.password.touched && f.password.invalid" class="invalid-feedback d-block">password invalid</div>
+
+      </mat-form-field>
+    </mat-card-content>
+    <div *ngIf="!valid" class="invalid-feedback d-block">username or password invalid</div>
+
+    <button mat-stroked-button color="accent" class="btn-block" (click)="login()">Log in</button>
+  </form>
+</mat-card>
+</div>
+</body>
